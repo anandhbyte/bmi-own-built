@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>BMI Calculator</h1>
+        <form id="bmiForm">
+            <div class="input-field">
+                <label for="age">Age</label>
+                <input id="age" type="number" placeholder="Enter your age">
+            </div>
+            <div class="slider-container">
+                <label for="weightSlider">Weight: <span id="weightValue">60</span> kg</label>
+                <input type="range" id="weightSlider" min="30" max="200" value="60" oninput="updateWeight()">
+            </div>
+            <div class="slider-container">
+                <label for="heightSlider">Height: <span id="heightValue">170</span> cm</label>
+                <input type="range" id="heightSlider" min="100" max="250" value="170" oninput="updateHeight()">
+            </div>
+            <button type="button" onclick="calculateBMI()" class="calculate-btn">Calculate BMI</button>
+            <button type="button" onclick="resetForm()" class="reset-btn">Reset</button>
+            <div id="result">
+                <p>BMI: <span id="bmiValue">--</span></p>
+                <p>Result: <span id="bmiCategory">--</span></p>
+                <p>Suggestion: <span id="bmiSuggestion">--</span></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

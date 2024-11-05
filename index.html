@@ -10,17 +10,17 @@
     <div class="card">
         <h1>BMI Calculator</h1>
         <form id="bmiForm">
-            <div class="input-field">
-                <label for="age">Age</label>
-                <input id="age" type="number" placeholder="Enter your age">
+            <div class="slider-container">
+                <label for="ageSlider">Age: <span id="ageValue">0</span> years</label>
+                <input type="range" id="ageSlider" min="0" max="100" value="0" oninput="updateAge()">
             </div>
             <div class="slider-container">
-                <label for="weightSlider">Weight: <span id="weightValue">60</span> kg</label>
-                <input type="range" id="weightSlider" min="30" max="200" value="60" oninput="updateWeight()">
+                <label for="weightSlider">Weight: <span id="weightValue">0</span> kg</label>
+                <input type="range" id="weightSlider" min="0" max="200" value="0" oninput="updateWeight()">
             </div>
             <div class="slider-container">
-                <label for="heightSlider">Height: <span id="heightValue">170</span> cm</label>
-                <input type="range" id="heightSlider" min="100" max="250" value="170" oninput="updateHeight()">
+                <label for="heightSlider">Height: <span id="heightValue">0</span> cm</label>
+                <input type="range" id="heightSlider" min="0" max="250" value="0" oninput="updateHeight()">
             </div>
             <button type="button" onclick="calculateBMI()" class="calculate-btn">Calculate BMI</button>
             <button type="button" onclick="resetForm()" class="reset-btn">Reset</button>

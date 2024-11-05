@@ -19,28 +19,14 @@ h1 {
     color: #50E3C2;
 }
 
-.input-field {
-    margin-bottom: 15px;
+.slider-container {
+    margin: 20px 0;
 }
 
 label {
     display: block;
     font-size: 16px;
     margin-bottom: 5px;
-}
-
-input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #777;
-    border-radius: 4px;
-    background-color: #555;
-    color: #fff;
-}
-
-.slider-container {
-    margin: 20px 0;
 }
 
 input[type="range"] {

@@ -1,19 +1,13 @@
-// main.js
 
-function updateWeight() {
-    const weight = document.getElementById('weightSlider').value;
-    document.getElementById('weightValue').innerText = weight;
-}
-
-function updateHeight() {
-    const height = document.getElementById('heightSlider').value;
-    document.getElementById('heightValue').innerText = height;
-}
 
 function calculateBMI() {
-    const age = document.getElementById('age').value;
+    const age = document.getElementById('ageSlider').value;
     const weight = document.getElementById('weightSlider').value;
     const height = document.getElementById('heightSlider').value;
+
+    if (age == 0 || weight == 0 || height == 0) 
+        { alert("Error: Age, weight, and height cannot be zero."); return
+    }
 
     if (age && height && weight) {
         const heightInMeters = height / 100;
@@ -40,17 +34,18 @@ function calculateBMI() {
         document.getElementById('bmiCategory').innerText = category;
         document.getElementById('bmiSuggestion').innerText = suggestion;
     } else {
-        alert("Please enter your age.");
+        alert("Please select your age.");
     }
 }
 
 // Function to reset the form
 function resetForm() {
-    document.getElementById('age').value = '';
-    document.getElementById('weightSlider').value = 60;
-    document.getElementById('heightSlider').value = 170;
-    document.getElementById('weightValue').innerText = 60;
-    document.getElementById('heightValue').innerText = 170;
+    document.getElementById('ageSlider').value = 0;
+    document.getElementById('weightSlider').value = 0;
+    document.getElementById('heightSlider').value = 0;
+    document.getElementById('ageValue').innerText = 0;
+    document.getElementById('weightValue').innerText = 0;
+    document.getElementById('heightValue').innerText = 0;
     document.getElementById('bmiValue').innerText = '--';
     document.getElementById('bmiCategory').innerText = '--';
     document.getElementById('bmiSuggestion').innerText = '--';

@@ -5,11 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
 <body>
     <div class="card">
         <h1>BMI Calculator</h1>
         <form id="bmiForm">
+            <!-- New Name Textbox -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <!-- New Gender Dropdown -->
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Existing Sliders -->
             <div class="slider-container">
                 <label for="ageSlider">Age: <span id="ageValue">0</span> years</label>
                 <input type="range" id="ageSlider" min="0" max="100" value="0" oninput="updateAge()">
@@ -22,8 +39,12 @@
                 <label for="heightSlider">Height: <span id="heightValue">0</span> cm</label>
                 <input type="range" id="heightSlider" min="0" max="250" value="0" oninput="updateHeight()">
             </div>
+
+            <!-- Buttons for Calculate, Reset, and Download -->
             <button type="button" onclick="calculateBMI()" class="calculate-btn">Calculate BMI</button>
             <button type="button" onclick="resetForm()" class="reset-btn">Reset</button>
+            <button type="button" onclick="downloadResult()" class="download-btn">Download Result</button>
+
             <div id="result">
                 <p>BMI: <span id="bmiValue">--</span></p>
                 <p>Result: <span id="bmiCategory">--</span></p>
